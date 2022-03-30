@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MyDate {
+            constructor(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month;
+            }
+            getYear() {
+                return this.year;
+            }
+            setDay(newDay) {
+                this.day = newDay;
+            }
+            setMonth(newMonth) {
+                this.month = newMonth;
+            }
+            setYear(newYear) {
+                this.year = newYear;
+            }
+            setDate() {
+                return `${this.day}/${this.month}/${this.year}`
+            }
+            toString() {
+                if (this.day < 10) {
+                    this.day = "0" + this.day;
+                } if (this.month < 10) {
+                    this.month = "0" + this.month;
+                }
+                return `${this.day}/${this.month}/${this.year}`
+            }
+        }
+        let date = new MyDate(2, 2, 2007);
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getYear();
+        console.log(day + "/" + month + "/" + year);
+        date.setDay(9);
+        date.setMonth(5);
+        date.setYear(2019);
+        let newDate = date.setDate();
+        let newDateString = date.toString();
+        console.log(newDate, newDateString);
+
+    </script>
+</body>
+
+</html>
